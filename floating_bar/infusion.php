@@ -32,7 +32,7 @@ if (file_exists(INFUSIONS."floating_bar/locale/".$settings['locale'].".php")) {
 // Infusion general information
 $inf_title = $locale['ftb001'];
 $inf_description = $locale['ftb002'];
-$inf_version = "2.1";
+$inf_version = "3.0 - Alpha";
 $inf_developer = "lippke";
 $inf_weburl = "http://www.zicy.dk";
 $inf_folder = "floating_bar";
