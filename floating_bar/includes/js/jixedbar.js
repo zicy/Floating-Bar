@@ -728,7 +728,6 @@ jQuery.fn.checkCookie = function(cookie_name) {
     			cookie_end = document.cookie.indexOf(";", cookie_start);
     			if (cookie_end == -1) cookie_end = document.cookie.length
     				return true;
-    			}
 			}
   	}
 	return false;
