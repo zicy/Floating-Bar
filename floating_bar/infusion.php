@@ -30,85 +30,53 @@ if (file_exists(INFUSIONS."floating_bar/locale/".$settings['locale'].".php")) {
 }
 
 // Infusion general information
-$inf_title = $locale['ftbin001'];
-$inf_description = $locale['ftbin002'];
+$inf_title = $locale['ftb001'];
+$inf_description = $locale['ftb002'];
 $inf_version = "3.0 - Alpha";
 $inf_developer = "lippke";
 $inf_weburl = "http://www.zicy.dk";
 $inf_folder = "floating_bar";
 $inf_panel 	= "floating_bar_panel";
 
-$inf_newtable[1] = DB_FLOATINGBAR_SETTINGS_TABLE." (
-name				varchar(200) NOT NULL DEFAULT '' PRIMARY KEY,
-value				varchar(200) NOT NULL DEFAULT ''
+$inf_newtable[1] = DB_FLOATINGBAR_TABLE." (
+facebook_name 						TEXT  DEFAULT '' NOT NULL,
+facebook 							TEXT  DEFAULT '' NOT NULL,
+youtube_name 						TEXT  DEFAULT '' NOT NULL,
+youtube 							TEXT  DEFAULT '' NOT NULL,
+twitter_name 						TEXT  DEFAULT '' NOT NULL,
+twitter 							TEXT  DEFAULT '' NOT NULL,
+feeds_name 							TEXT  DEFAULT '' NOT NULL,
+feeds 								TEXT  DEFAULT '' NOT NULL,
+feeds_name_2 						TEXT  DEFAULT '' NOT NULL,
+feeds_2 							TEXT  DEFAULT '' NOT NULL,
+message_too_users 					TEXT  DEFAULT '' NOT NULL,
+ftb_twitter_account					TEXT  DEFAULT '' NOT NULL,
+ftb_get_social_on_off 				TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_facebook_on_off 				TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_youtube_on_off 					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_twitter_on_off 					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_feeds_on_off 					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_feeds_2_on_off 					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_message_too_users_on_off 		TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_show_avatar_on_off 				TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_top_bottom						TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_theme							TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_google_1						TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_facebook_like					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_twitter_follow					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
+ftb_social_sharing					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL
 ) ENGINE=MyISAM;";
-
-$inf_newtable[2] = DB_FLOATINGBAR_SOCIAL_TABLE." (
-`id` 			INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`name`	 		VARCHAR( 255 ) NOT NULL ,
-`link`	 		VARCHAR( 255 ) NOT NULL ,
-`link_type` 	INT NOT NULL ,
-`icon` 			VARCHAR( 255 ) NOT NULL ,
-`show` 			INT NOT NULL ,
-`sort_id` 		INT NOT NULL
-) ENGINE = MYISAM ";
-
-$inf_insertdbrow[1] = DB_FLOATINGBAR_SETTINGS_TABLE." (name, value) VALUES('theme', '0')";
-$inf_insertdbrow[2] = DB_FLOATINGBAR_SETTINGS_TABLE." (name, value) VALUES('top_bottom_toggle', '0')";
-$inf_insertdbrow[3] = DB_FLOATINGBAR_SETTINGS_TABLE." (name, value) VALUES('link_toggle', '0')";
-$inf_insertdbrow[4] = DB_FLOATINGBAR_SETTINGS_TABLE." (name, value) VALUES('social_toggle', '0')";
-$inf_insertdbrow[5] = DB_FLOATINGBAR_SETTINGS_TABLE." (name, value) VALUES('feeds_toggle', '0')";
-$inf_insertdbrow[6] = DB_FLOATINGBAR_SETTINGS_TABLE." (name, value) VALUES('message_toggle', '0')";
-$inf_insertdbrow[7] = DB_FLOATINGBAR_SETTINGS_TABLE." (name, value) VALUES('message', '0')";
-$inf_insertdbrow[8] = DB_FLOATINGBAR_SETTINGS_TABLE." (name, value) VALUES('usermenu_toggle', '0')";
  
- 
-$inf_droptable[1] = DB_FLOATINGBAR_SETTINGS_TABLE;
- $inf_droptable[2] = DB_FLOATINGBAR_SOCIAL_TABLE;
- 
- 
- /*
 $inf_insertdbrow[1] = DB_FLOATINGBAR_TABLE." (facebook_name, facebook, youtube_name, youtube, twitter_name, twitter, feeds_name, feeds, feeds_name_2, feeds_2, message_too_users, ftb_facebook_on_off, ftb_youtube_on_off, ftb_twitter_on_off, ftb_feeds_on_off, ftb_feeds_2_on_off, ftb_message_too_users_on_off, ftb_get_social_on_off, ftb_show_avatar_on_off, ftb_top_bottom, ftb_theme, ftb_google_1, ftb_facebook_like, ftb_twitter_follow, ftb_social_sharing, ftb_twitter_account) VALUES('".$locale['ftb053']."', 'facebook.com', '".$locale['ftb054']."', 'youtube.com', '".$locale['ftb055']."', 'twitter.com', '".$locale['ftb056']."', '".$locale['ftb062']."','".$locale['ftb057']."', '".$locale['ftb063']."', '".$locale['ftb049']."', '', '', '', '', '', '', '', '', '', '', '', '', '', '1', 'zicy_lippke')";
 $inf_insertdbrow[2] = DB_PANELS." SET panel_name='".$locale['ftb001']."', panel_filename='".$inf_panel."', panel_content='', panel_side=2, panel_order='1', panel_type='file', panel_access='100', panel_display='1', panel_status='1'";
 $inf_droptable[1] = DB_FLOATINGBAR_TABLE;
 $inf_deldbrow[1] = DB_PANELS." WHERE panel_filename='floating_bar_panel'";
-*/
+
 $inf_adminpanel[1] = array(
-	"title" => $locale['ftbin001'],
+	"title" => $locale['ftb001'],
 	"image" => "admin.gif",
-	"panel" => "admin/main.php",
+	"panel" => "floating_bar_admin.php",
 	"rights" => "FTB"
 );
-
-
-/*
-		facebook_name 						TEXT DEFAULT '' NOT NULL,
-		facebook 							TEXT DEFAULT '' NOT NULL,
-		youtube_name 						TEXT DEFAULT '' NOT NULL,
-		youtube 							TEXT DEFAULT '' NOT NULL,
-		twitter_name 						TEXT DEFAULT '' NOT NULL,
-		twitter 							TEXT DEFAULT '' NOT NULL,
-		feeds_name 							TEXT DEFAULT '' NOT NULL,
-		feeds 								TEXT DEFAULT '' NOT NULL,
-		feeds_name_2 						TEXT DEFAULT '' NOT NULL,
-		feeds_2 							TEXT DEFAULT '' NOT NULL,
-		message_too_users 					TEXT DEFAULT '' NOT NULL,
-		ftb_twitter_account					TEXT DEFAULT '' NOT NULL,
-	//	ftb_get_social_on_off 				TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-		ftb_facebook_on_off 				TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-		ftb_youtube_on_off 					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-		ftb_twitter_on_off 					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-	//	ftb_feeds_on_off 					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-		ftb_feeds_2_on_off 					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-	//	ftb_message_too_users_on_off 		TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-		ftb_show_avatar_on_off 				TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-	//	ftb_top_bottom						TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-	//	ftb_theme							TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-		ftb_google_1						TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-		ftb_facebook_like					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-		ftb_twitter_follow					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL,
-	//	ftb_social_sharing					TINYINT(1) UNSIGNED DEFAULT '0' NOT NULL
-*/
-
 
 ?>
