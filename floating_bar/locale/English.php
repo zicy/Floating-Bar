@@ -1,4 +1,35 @@
 <?php
+// Admin - Menu
+$locale['ftbm001'] = "Main";
+$locale['ftbm002'] = "Social";
+$locale['ftbm003'] = "Feeds";
+$locale['ftbm004'] = "User Menu";
+
+// Admin - Main
+$locale['ftbam001'] = "Main Settings";
+$locale['ftbam002'] = "Floating Bar On/ Off";
+$locale['ftbam003'] = "Theme";
+$locale['ftbam004'] = "Social";
+$locale['ftbam005'] = "Feeds";
+$locale['ftbam006'] = "";
+$locale['ftbam007'] = "";
+
+// Admin Social
+$locale['ftbas001'] = "";
+
+// Admin Social
+$locale['ftbin001'] = "Floating Bar";
+$locale['ftbin002'] = "A Floating Bar";
+$locale['ftbin003'] = "";
+
+// General
+$locale['ftb001'] = "On";
+$locale['ftb002'] = "Off";
+$locale['ftb003'] = "Yes";
+$locale['ftb004'] = "No";
+
+
+/*
 $locale['ftb001'] = "Floating Bar";
 $locale['ftb002'] = "An Floating Bar Infusion for PHP-Fusion.";
 $locale['ftb003'] = "Facebook:";
@@ -55,6 +86,8 @@ $locale['ftb060'] = "Social sharing";
 $locale['ftb061'] = "Twitter account";
 $locale['ftb062'] = "feed link";
 $locale['ftb063'] = "feed link 2";
+
+*/
 
 $locale['ftb_saved'] = "Saved";
 $locale['ftb_not_saved'] = "Not saved";
